@@ -2,8 +2,59 @@
   text-align: center;
 }
 
+.background{
+  background-image: url('./img/sky.jpg');
+  height: 100vh;
+  width: 100vw;
+}
+
+/* @font-face {
+  font-family: 'Abril_Fatface';
+  src: local('Abril_Fatface'), url('./fonts/AbrilFatface-Regular.ttf') format('truetype');
+} */
+
+#input-city{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit-city{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+#theTitle{
+  color: pink;
+  font-size: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .Title {
   
+}
+
+.output{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+.rectangle{
+  display: inline-block;
+  width: 700px;
+  height: 400px;
+  background-color:rgba(250, 250, 250, 0.8);
+  
+  margin-top: 40px;
 }
 
 .App-logo {
