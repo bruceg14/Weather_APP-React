@@ -1,0 +1,21 @@
+#background_contact{
+    background-image: url('../img/blue_background.jpg');
+    height: 100vh;
+    width: 100vw;
+  }
+
+#email{
+    color:azure;
+    padding: 10px;
+}
+
+#myImg{
+    width: 100px;
+    height: 150px;
+    padding: 10px;
+}
+
+#p-body{
+    padding: 10px;
+    color: azure;
+}

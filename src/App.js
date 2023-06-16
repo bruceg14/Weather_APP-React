@@ -6,6 +6,7 @@ import Home from "./pages/Home.js"
 import Layout from "./pages/Layout.js"
 import Contact from './pages/Contact.js';
 import History from './pages/Search_his.js';
+import Current_Weather from './pages/LocalWeather';
 
 function App(){
   return (
@@ -15,6 +16,7 @@ function App(){
           <Route index element={<Home />} />
           <Route path = "contact" element={<Contact />}/>
           <Route path = "submitHis" element = {<History />}/>
+          <Route path = "currentWeather" element = {<Current_Weather />} />
           {/* <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} /> */}

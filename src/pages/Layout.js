@@ -1,8 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
+import "./Layout.css"
 
 const Layout = () => {
   return (
-    <div >
+    <div id="layout_background">
       <nav>
         <ul>
           <li>
@@ -13,6 +14,9 @@ const Layout = () => {
           </li>
           <li>
             <Link to= "/submitHis">History</Link>
+          </li>
+          <li>
+            <Link to = "/currentWeather">Current Weather</Link>
           </li>
         </ul>
       </nav>

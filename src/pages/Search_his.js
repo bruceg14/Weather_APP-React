@@ -1,7 +1,7 @@
-import { getDatabase, ref, set, onValue } from "firebase/database";
+import { getDatabase, ref, set, onValue, query, orderByKey, orderByValue } from "firebase/database";
 import fb_app from "./fb_database.js"
 import React, { useState, useEffect } from 'react';
-
+import "./Search_his.css"
 
 function History() {
     const [data, SetData] = useState([])
@@ -9,15 +9,16 @@ function History() {
 
 
     const db = getDatabase();
-    const city_ref = ref(db, "city/")
+    let city_ref = ref(db, "city/")
 
     useEffect(() => {
-        onValue(city_ref, (snapshot) => {
+        console.log(query(city_ref, orderByKey()))
+        onValue(query(city_ref, orderByValue()), (snapshot) => {
             let tmp = []
             snapshot.forEach((children) => {
                 const child_key = children.key
                 const child_val = children.val()
-                tmp.push(<li>{child_key}</li>)
+                tmp.unshift(<li>{child_key}   {child_val}</li>)
             })
             SetData(tmp)
         })
@@ -30,13 +31,10 @@ function History() {
         <li>{city}</li>
     })
 
-    function handleSubmit() {
-       console.log(data)
-    }
-
 
     return(
-        <div>
+        <div className = "histories">
+            <h1 id = "title_search_history">Search history base on frequency</h1>
             <h2>List of Cities:</h2>
             <ul>
                 {data}
