@@ -1,4 +1,4 @@
-import "./Contact.css"
+import "../design/Contact.css"
 import myImg from "../img/Bruce's Picture.jpg"
 
 function Contact() {

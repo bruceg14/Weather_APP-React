@@ -17,9 +17,6 @@ function App(){
           <Route path = "contact" element={<Contact />}/>
           <Route path = "submitHis" element = {<History />}/>
           <Route path = "currentWeather" element = {<Current_Weather />} />
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

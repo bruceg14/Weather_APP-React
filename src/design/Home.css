@@ -15,19 +15,37 @@
 
     margin-top: 20px;
   }
-  
-  #input-city{
+
+  #cityLabel{
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
-  #submit-city{
-    display: flex;
-    align-items: center;
-    justify-content: center;
   
-    margin-top: 20px;
+  #input-city{
+    border-radius: 10px; 
+    width: 300px; 
+    height: 30px;
+    justify-content: center;
+    
+  }
+  
+  #submit-city{
+    justify-content: center;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px; 
+  }
+
+  .divCity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #submit-city:hover{
+    background-color: #45a049;
   }
   
   #theTitle{
@@ -53,17 +71,38 @@
     white-space: pre-line;
   }
   
-  .rectangle{
+  .infoBlock{
+    border-radius: 20px;
     display: inline-block;
     width: 700px;
     height: 400px;
     background-color:rgba(250, 250, 250, 0.8);
-    
     margin-top: 40px;
+    
   }
-  
-  .info-p{
+  #invalid-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 320px;
     word-wrap: break-word;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+    color:red;
+  }
+
+  #info-p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 320px;
+    word-wrap: break-word;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bold;
   }
 
   .App-logo {

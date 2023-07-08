@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./LocalWeather.css"
+import "../design/LocalWeather.css"
 
 const weather_api_key = "7fa43d40918cc212ef1f34b51d535005"
 

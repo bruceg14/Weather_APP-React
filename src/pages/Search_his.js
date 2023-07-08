@@ -1,7 +1,7 @@
 import { getDatabase, ref, set, onValue, query, orderByKey, orderByValue } from "firebase/database";
 import fb_app from "./fb_database.js"
 import React, { useState, useEffect } from 'react';
-import "./Search_his.css"
+import "../design/Search_his.css"
 
 function History() {
     const [data, SetData] = useState([])

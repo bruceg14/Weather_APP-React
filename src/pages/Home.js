@@ -1,4 +1,4 @@
-import './Home.css';
+import '../design/Home.css';
 import React, { useState } from 'react';
 import ReactSwitch from 'react-switch';
 import fb_app from './fb_database.js'
@@ -25,7 +25,6 @@ function Title(){
 
 function InputCity(){
   const [celsius, setCelsius] = useState(false)
-
   const [formData, setFormData] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -36,25 +35,23 @@ function InputCity(){
 
   const handleSubmit = (event) =>{
     event.preventDefault(); 
-    // console.log(formData);
     setIsSubmitted(true);
   }
 
 
   return(
     <div>
-      <form onSubmit={handleSubmit}>
-        <label id = "input-city">
-          <input  type = "text" onChange = {handleChange} placeholder='Input the City, Country'/>
+      <form  onSubmit={handleSubmit}>
+        <label id = "cityLabel" for= "input-city">
+          <input  id = "input-city" type = "text" onChange = {handleChange} placeholder='Input the City, Country'/>
         </label>
         
-        <div id = "submit-city">
-          <button  type = "submit">Submit</button> 
+        <div className = "divCity">
+          <button id = "submit-city" type = "submit">Submit</button> 
         </div>
        
       </form>
 
-    
     {isSubmitted && <Output name = {formData} celsius = {celsius}/>}
     <Temp_type variable = {celsius} setVariable = {setCelsius}/>
     </div>
@@ -63,12 +60,9 @@ function InputCity(){
 }
 
 function Output(prop){
-
   const [messC, setMessC] = useState("")
   const [messF, setMessF] = useState("")
-
   const [valid_city, setValid] = useState(true)
-
   const apiKey = '7fa43d40918cc212ef1f34b51d535005';
   
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${prop.name},uk&APPID=${apiKey}`;
@@ -86,7 +80,7 @@ function Output(prop){
         Wind Speed: ${data.wind.speed} m/s
         Weather: ${data.weather[0].description}`)
 
-        setMessF(`Temperature: ${((data.main.temp - 273.15) * 5 / 9 + 32).toFixed(3)} Fahrenheit
+        setMessF(`Temperature: ${((data.main.temp - 273.15) * 9 / 5 + 32).toFixed(3)} Fahrenheit
         Humidity: ${data.main.humidity}
         Wind Speed: ${data.wind.speed} m/s
         Weather: ${data.weather[0].description}`)
@@ -127,9 +121,9 @@ function Output(prop){
 
   return (
     <div className='output'>
-      <div className='rectangle'>
+      <div className='infoBlock'>
         {/* {console.log({url})} */}
-        {valid_city ?  <p className='info-p'>{selectMess()}</p> : <p>Invalid city input</p>}
+        {valid_city ?  <p id='info-p'>{selectMess()}</p> : <p id = "invalid-info">Invalid city input</p>}
       </div>
     </div>
   )
